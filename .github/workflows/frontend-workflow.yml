@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Change dir to repo dir
-        run: cd ../../..
+        run: cd ../../../
 
       - name: Run docker compose
         run: pwd
