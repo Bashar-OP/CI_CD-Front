@@ -10,8 +10,15 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Access 
+      - name: Checkout front-end repo
+        uses: actions/checkout@v4
+        
+      - name: Checkout back-end repo
+        uses: actions/checkout@v4
+        with:
+          repository: Bashar-OP/CI_CD_Back
+          
+      - name: Run runner docker compose
         run: |
           cd ~/home/bashar-alquos/Desktop/Training/DevOps/3.CI_CD/apptraining
           docker-compose up -d
