@@ -13,8 +13,10 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - uses: actions/checkout@v3
       - name: Access pwd
-        run: pwd
+        run: |
+          ls -a /
 
 
         
