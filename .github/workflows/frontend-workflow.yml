@@ -23,7 +23,8 @@ jobs:
           
       - name: Run runner docker compose
         run: |
-          pwd
+          docker-compose up -d
+          docker-compose down
 
 
 
