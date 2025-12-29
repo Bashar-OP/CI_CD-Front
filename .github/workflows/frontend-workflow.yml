@@ -23,9 +23,7 @@ jobs:
           
       - name: Run runner docker compose
         run: |
-          cd ~/home/bashar-alquos/Desktop/Training/DevOps/3.CI_CD/apptraining
-          docker-compose up -d
-          docker-compose down
+          pwd
 
 
 
