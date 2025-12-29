@@ -13,10 +13,8 @@ jobs:
       - name: Access pwd
         run: |
           echo "Bash is working"
-          cd ../
-          pwd
-          cd ../
-          pwd
+          cd /home/bashar-alquos/Desktop/Training/DevOps/3.CI_CD/apptraining
+          docker-compose up
 
 
         
