@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Change dir to repo dir
-        run: cd /home/bashar-alquos/Desktop/Training/DevOps/3.CI_CD/'apptraining 2'
+        run: cd ../../..
 
       - name: Run docker compose
-        run: docker compose up
+        run: pwd
 
      
 
