@@ -13,8 +13,8 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Change dir to repo dir
-        run: pwd
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Run docker compose
         run: pwd
