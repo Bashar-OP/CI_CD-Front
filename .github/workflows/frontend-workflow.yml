@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Access pwd
         run: |
-          cd ../../../..
+          echo "Bash is working"
 
 
         
