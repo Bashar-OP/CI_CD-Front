@@ -12,9 +12,7 @@ jobs:
     steps:
       - name: Access pwd
         run: |
-          pwd
-          ls -R /home/abc/Desktop/Training/DevOps/
-          ls -al
+          cd ../../../..
 
 
         
