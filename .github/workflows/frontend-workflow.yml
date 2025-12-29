@@ -14,8 +14,7 @@ jobs:
 
     steps:
       - name: Access pwd
-        run: pwd
-        working-directory: /home/bashar-alquos/Desktop/Training/DevOps/3.CI_CD/apptraining\ 2    
+        run: cd "/home/bashar-alquos/Desktop/Training/DevOps/3.CI_CD/apptraining 2"
 
 
         
