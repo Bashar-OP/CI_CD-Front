@@ -13,6 +13,10 @@ jobs:
       - name: Access pwd
         run: |
           echo "Bash is working"
+          cd ../
+          pwd
+          cd ../
+          pwd
 
 
         
