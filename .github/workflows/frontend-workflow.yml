@@ -13,13 +13,13 @@ jobs:
       - name: Checkout front-end repo
         uses: actions/checkout@v4
         with:
-          path: Front-end
+          path: frontend
         
       - name: Checkout back-end repo
         uses: actions/checkout@v4
         with:
           repository: Bashar-OP/CI_CD_Back
-          path: Back-end
+          path: backend
           
       - name: Run runner docker compose
         run: |
