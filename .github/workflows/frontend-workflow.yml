@@ -13,11 +13,9 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run docker compose
+      - name: Access pwd
         run: pwd
+        working-directory: /home/bashar-alquos/Desktop/Training/DevOps/3.CI_CD/"apptraining 2"
 
      
 
