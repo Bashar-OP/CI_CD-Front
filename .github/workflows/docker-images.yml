@@ -36,11 +36,11 @@ jobs:
       - name: Build Frontend image
         run: |
            cd frontend
-           docker build -t ghcr.io/${{ OWNER_LC }}/frontend:latest .
+           docker build -t ghcr.io/${OWNER_LC}/frontend:latest .
            cd ..
 
       - name: Push Frontend image
-        run: docker push ghcr.io/${{ OWNER_LC }}/frontend:latest
+        run: docker push ghcr.io/${OWNER_LC}/frontend:latest
 
       - name: Build Backend image
         run: |
