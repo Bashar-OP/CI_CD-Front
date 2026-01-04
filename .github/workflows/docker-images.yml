@@ -27,14 +27,20 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: set lower case owner name
+        run: |
+          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+        env:
+          OWNER: '${{ github.repository_owner }}'
+          
       - name: Build Frontend image
         run: |
            cd frontend
-           docker build -t ghcr.io/${{ github.repository }}/frontend:latest .
+           docker build -t ghcr.io/${{ OWNER_LC }}/frontend:latest .
            cd ..
 
       - name: Push Frontend image
-        run: docker push ghcr.io/${{ github.repository }}/frontend:latest
+        run: docker push ghcr.io/${{ OWNER_LC }}/frontend:latest
 
       - name: Build Backend image
         run: |
