@@ -1,0 +1,63 @@
+name: frontend
+   
+on:
+  push:
+    branches: [ main ] 
+
+jobs:
+  images-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout front-end repo
+        uses: actions/checkout@v4
+        with:
+          path: frontend
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Build Frontend image
+        run: |
+           cd frontend
+           docker build -t ghcr.io/bashar-op/frontend:latest .
+
+      - name: Push Frontend image
+        run: docker push ghcr.io/bashar-op/frontend:latest
+
+    
+  docker-compose-execute:
+    needs: images-push
+    runs-on: self-hosted
+    permissions:
+      contents: read
+      packages: read
+
+    steps:
+      - name: Run docker compose
+        run: |
+          docker-compose up -d || true
+          docker-compose down
+        
+
+        
+
+
+
+        
+
+
+
+
+
+
+
+      
+  
